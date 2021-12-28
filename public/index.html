@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Marconi AR</title>
+
+    <script defer src="/__/firebase/9.6.1/firebase-app-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
 
     <script type="module" src="./firebase.js"></script>
 
@@ -15,7 +24,6 @@
     <script src="./script.js"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
-
   <body>
     <a-scene
       vr-module-ui="enabled: false"
