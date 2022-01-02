@@ -33,12 +33,26 @@
 </head>
 
 <body>
-	<a-scene vr-module-ui="enabled: false" embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+	<a-scene vr-module-ui="enabled: false" embedded
+		arjs='sourceType: webcam;videoTexture: true; debugUIEnabled: false;'>
 		<a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
-			gps-entity-place="longitude: 12.086840; latitude: 41.990030;" animation-mixer />
-		<a-text value="Questo simbolo sta vicino alla tua posizione!" scale="20 20 20"
-			gps-entity-place="longitude: 12.086840; latitude: 41.990030;">
-		</a-text>
+			gps-entity-place="latitude: 41.990030; longitude: 12.086840;" animation-mixer />
+		<!-- <a-box color="yellow" gps-projected-entity-place="latitude: 41.990030; longitude: 12.086840;" />
+		<a-box color="yellow" gps-projected-entity-place="latitude: 41.991030; longitude: 12.086840;" />
+		<a-box color="yellow" gps-projected-entity-place="latitude: 41.992030; longitude: 12.086840;" />
+		<a-box color="yellow" gps-projected-entity-place="latitude: 41.993030; longitude: 12.086840;" />
+		<a-box color="yellow" gps-projected-entity-place="latitude: 41.994030; longitude: 12.086840;" />
+		<a-box color="yellow" gps-projected-entity-place="latitude: 41.995030; longitude: 12.086840;" /> -->
+		<!-- Anselmi -->
+		<!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
+			gps-entity-place="latitude: 44.282230; longitude: 9.443130;" animation-mixer /> -->
+		<a-box color="yellow" gps-projected-entity-place="latitude: 44.282230; longitude: 9.443130;" /> -->
+		<!-- Verticelli -->
+		<a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
+			gps-entity-place="latitude: 42.035976; longitude: 11.854992;" animation-mixer />
+		<!-- <a-text value="Questo simbolo sta vicino alla tua posizione!" scale="5 5 5"
+			gps-entity-place="latitude: 41.890030; longitude: 12.186840;">
+		</a-text> -->
 		<a-camera gps-camera rotation-reader>
 		</a-camera>
 	</a-scene>
