@@ -37,26 +37,27 @@
 		arjs='sourceType: webcam;videoTexture: true; debugUIEnabled: false;'>
 		<a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
 			gps-entity-place="latitude: 41.990030; longitude: 12.086840;" animation-mixer />
-		<!-- <a-box color="yellow" gps-projected-entity-place="latitude: 41.990030; longitude: 12.086840;" />
-		<a-box color="yellow" gps-projected-entity-place="latitude: 41.991030; longitude: 12.086840;" />
-		<a-box color="yellow" gps-projected-entity-place="latitude: 41.992030; longitude: 12.086840;" />
-		<a-box color="yellow" gps-projected-entity-place="latitude: 41.993030; longitude: 12.086840;" />
-		<a-box color="yellow" gps-projected-entity-place="latitude: 41.994030; longitude: 12.086840;" />
-		<a-box color="yellow" gps-projected-entity-place="latitude: 41.995030; longitude: 12.086840;" /> -->
+		<a-box color="yellow" gps-entity-place="latitude: 41.990030; longitude: 12.086840;" />
+		<a-box color="yellow" gps-entity-place="latitude: 41.990031; longitude: 12.086840;" />
+		<a-box color="yellow" gps-entity-place="latitude: 41.990032; longitude: 12.086840;" />
+		<a-box color="yellow" gps-entity-place="latitude: 41.990033; longitude: 12.086840;" />
+		<a-box color="yellow" gps-entity-place="latitude: 41.990034; longitude: 12.086840;" />
+		<a-box color="yellow" gps-entity-place="latitude: 41.990036; longitude: 12.086840;" />
 		<!-- Anselmi -->
 		<!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
 			gps-entity-place="latitude: 44.282230; longitude: 9.443130;" animation-mixer /> -->
-		<a-box color="yellow" gps-projected-entity-place="latitude: 44.282230; longitude: 9.443130;" /> -->
+		<a-box color="yellow" gps-entity-place="latitude: 44.282230; longitude: 9.443130;" /> -->
 		<!-- Verticelli -->
 		<a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
 			gps-entity-place="latitude: 42.035976; longitude: 11.854992;" animation-mixer />
 		<!-- <a-text value="Questo simbolo sta vicino alla tua posizione!" scale="5 5 5"
 			gps-entity-place="latitude: 41.890030; longitude: 12.186840;">
 		</a-text> -->
-		<a-camera gps-camera rotation-reader>
+		<a-camera gps-camera rotation-reader near="0.1" far="100">
 		</a-camera>
 	</a-scene>
 </body>
 
 </html>
 <!-- look-at="[gps-camera]" -->
+<!-- gps-camera -->
