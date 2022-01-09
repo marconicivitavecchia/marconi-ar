@@ -1,12 +1,39 @@
-// window.onload = () => {
-// 	document
-// 		.querySelector("a-text")
-// 		.setAttribute(
-// 			"gps-entity-place",
-// 			`latitude: 41.99003057141335; longitude: 12.086840580161109;`
-// 		);
-// };
+window.onload = () => {
+	setTimeout(
+		() => navigator
+			.geolocation
+			.getCurrentPosition(
+				position => {
+					document
+						.querySelector("#info")
+						.innerHTML =
+						`${position.coords.latitude} ${position.coords.longitude}) ${position.coords.accuracy}`
 
-// 56836
+					// document
+					// 	.querySelector("#block")
+					// 	.remove()
 
-// `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+					document
+						.querySelector("#antenna")
+						.setAttribute(
+							'gps-entity-place',
+							`latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+						)
+
+					document
+						.querySelector("#detector")
+						.setAttribute(
+							'gps-entity-place',
+							`latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`
+						)
+				},
+				() => { },
+				{
+					enableHighAccuracy: true,
+					timeout: 5000,
+					maximumAge: Infinity
+				}
+			),
+		2000
+	)
+}

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -19,45 +18,42 @@
 	<script src="./script.js"></script>
 </head>
 
+<!-- TODO: provare a sistemare la posizione -->
+<!-- Galleria immagini eventi! -->
+
 <body>
+	<!-- <div id="block"></div> -->
+	<div id="info">Caricamento...</div>
 	<a-scene vr-module-ui="enabled: false" embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+
 		<a-assets>
-			<a-asset-item id="antenna-obj" src="./assets/AntennaUHF.obj"></a-asset-item>
-			<a-asset-item id="antenna-mtl" src="./assets/AntennaUHF.mtl"></a-asset-item>
+			<a-asset-item id="antenna-obj" src="./assets/anteanna-uhf.obj"></a-asset-item>
+			<a-asset-item id="antenna-mtl" src="./assets/anteanna-uhf.mtl"></a-asset-item>
+			<a-asset-item id="detector-obj" src="./assets/detector-magnetico.obj"></a-asset-item>
+			<a-asset-item id="detector-mtl" src="./assets/detector-magnetico.mtl"></a-asset-item>
 		</a-assets>
 
 		<!-- Anselmi -->
-		<a-box color="yellow" gps-entity-place="latitude: 44.282230; longitude: 9.443130;" />
-		<a-obj-model src="#antenna-obj" mtl="#antenna-mtl" gps-entity-place="latitude: 44.282230; longitude: 9.443130;">
-		</a-obj-model>
-		<!-- <a-obj-model src="#antenna-obj" mtl="#antenna-mtl" gps-entity-place="latitude: 44.282231; longitude: 9.443130;">
-		</a-obj-model>
-		<a-obj-model src="#antenna-obj" mtl="#antenna-mtl" gps-entity-place="latitude: 44.282232; longitude: 9.443130;">
-		</a-obj-model> -->
+		<!-- <a-box color="yellow" gps-entity-place="latitude: 44.282230; longitude: 9.443130;" /> -->
 
 		<!-- Cicio -->
-		<a-obj-model src="#antenna-obj" mtl="#antenna-mtl"
-			gps-entity-place="latitude: 41.990030; longitude: 12.086840;"></a-obj-model>
-		<!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
-			gps-entity-place="latitude: 41.990030; longitude: 12.086840;" animation-mixer /> -->
-		<!-- <a-box color="yellow" scale="100 100 100" gps-entity-place="latitude: 41.990250; longitude: 12.086440;" /> -->
+		<a-obj-model id="antenna" src="#antenna-obj" mtl="#antenna-mtl"
+			gps-entity-place="latitude: 41.990094; longitude: 12.086742;"></a-obj-model>
+		<a-obj-model id="detector" src="#detector-obj" mtl="#detector-mtl"
+			gps-entity-place="latitude: 41.990094; longitude: 12.086742;"></a-obj-model>
 		<a-text value="This content will always face you." look-at="[gps-camera]" scale="50 50 50"
-			gps-entity-place="latitude: 41.990030; longitude: 12.086840;"></a-text>
+			gps-entity-place="latitude: 41.990094; longitude: 12.086742;"></a-text>
 
 		<!-- Verticelli -->
-		<!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
-			gps-entity-place="latitude: 42.035976; longitude: 11.854992;" animation-mixer /> -->
 		<a-obj-model src="#antenna-obj" mtl="#antenna-mtl"
 			gps-entity-place="latitude: 42.035976; longitude: 11.854992;"></a-obj-model>
-		<!-- <a-obj-model src="#antenna-obj" mtl="#antenna-mtl"
-			gps-entity-place="latitude: 42.035977; longitude: 11.854993;"></a-obj-model> -->
 
 		<!-- Prof -->
-		<a-obj-model src="#antenna-obj" mtl="#antenna-mtl"
-			gps-entity-place="latitude: 41.9944215; longitude: 12.096003;"></a-obj-model>
 		<a-box color="red" gps-entity-place="latitude: 41.9944215; longitude: 12.096003;" />
 
-		<a-camera gps-camera rotation-reader near="0.1" far="100"></a-camera>
+		<a-camera gps-camera rotation-reader near="0.1" fov="80" arjs-look-controls='smoothingFactor: 0.1'
+			gps-projected-camera='gpsMinDistance: 5' rotation-reader vertical-controls
+			wasd-controls="acceleration: 1300"></a-camera>
 	</a-scene>
 </body>
 
