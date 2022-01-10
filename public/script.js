@@ -7,9 +7,7 @@ const ASSETS = [
 	{ id: 'telegrafo-mtl', src: 'assets/telegrafo.mtl' },
 ]
 
-
-
-function createElement(tag, attributes, children) {
+function createElement(tag, attributes, ...children) {
 	let element = document.createElement(tag)
 
 	if (attributes)
@@ -17,14 +15,28 @@ function createElement(tag, attributes, children) {
 			element.setAttribute(name, value)
 
 	if (children)
-		element.append(children)
+		element.append(...children)
 
 	return element;
 }
 
 window.onload = () => {
-	// AFRAME.regi
 	let scene = document.querySelector('a-scene')
+
+	scene.append(
+		createElement(
+			'a-assets',
+			{},
+			...ASSETS
+				.map(
+					({ id, src }) =>
+						createElement(
+							'a-asset',
+							{ id: `${id}`, src: `${src}` }
+						)
+				)
+		)
+	)
 
 	for (let value = 0; value <= 5; value++) {
 		scene.append(
@@ -49,10 +61,6 @@ window.onload = () => {
 		)
 	}
 
-	// let assets = createElement('a-assets')
-
-	// for (asset of assets) {
-	// }
 }
 
 // createElement(
