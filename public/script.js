@@ -19,11 +19,13 @@ function createElement(tag, attributes, ...children) {
 	if (children)
 		element.append(...children)
 
-	return element;
+	return element
 }
 
 window.onload = () => {
 	let scene = document.querySelector('a-scene')
+
+	localStorage.setItem('foundMarkers', JSON.stringify([]))
 
 	scene.append(
 		createElement(
@@ -41,38 +43,42 @@ window.onload = () => {
 	)
 
 	for (let value = 0; value <= 5; value++) {
-		scene.append(
+		let marker = createElement(
+			'a-marker',
+			{
+				id: `${value}`,
+				value: `${value}`,
+				type: 'barcode',
+				emitevent: 'true',
+			},
 			createElement(
-				'a-marker',
+				'a-obj-model',
 				{
-					'value': `${value}`,
-					type: 'barcode',
-					emitevent: 'true',
-				},
-				createElement(
-					'a-obj-model',
-					{
-						id: 'detector',
-						src: '#detector-obj',
-						mtl: '#detector-mtl',
-						position: '0 0 0',
-						scale: '1 1 1',
-					}
-				)
+					id: 'detector',
+					src: '#detector-obj',
+					mtl: '#detector-mtl',
+					position: '0 0 0',
+					scale: '1 1 1',
+				}
 			)
 		)
+
+		marker.addEventListener(
+			'markerFound',
+			(event) => {
+				let markers = new Set(JSON.parse(localStorage.getItem('foundMarkers'))) || new Set()
+				markers.add(event.target.id)
+				localStorage.setItem('foundMarkers', JSON.stringify([...markers]))
+
+				document
+					.querySelector('#info')
+					.innerHTML = `Trovati ${markers.size} su 5`
+			}
+		)
+
+		scene.append(marker)
 	}
-
 }
-
-// createElement(
-// 	'a-entity',
-// 	{
-// 		'gltf-model': '#antenna-glb',
-// 		position: '0 0 0',
-// 		scale: '2 2 2',
-// 	}
-// )
 
 //  <a-obj-model id="telegrafo" src="#telegrafo-obj" mtl="#telegrafo-mtl" position="0 0 0" scale="1 1 1">
 // </a-obj-model>
