@@ -1,11 +1,13 @@
 const ASSETS = [
-	{ id: 'antenna-obj', src: 'assets/antenna-uhf.obj' },
-	{ id: 'antenna-mtl', src: 'assets/antenna-mtl.obj' },
+	{ id: 'antenna-obj', src: './assets/antenna-uhf.obj' },
+	{ id: 'antenna-mtl', src: './assets/antenna-uhf.mtl' },
 	{ id: 'detector-obj', src: 'assets/detector-magnetico.obj' },
 	{ id: 'detector-mtl', src: 'assets/detector-magnetico.mtl' },
 	{ id: 'telegrafo-obj', src: 'assets/telegrafo.obj' },
 	{ id: 'telegrafo-mtl', src: 'assets/telegrafo.mtl' },
 ]
+
+let localStorage = window.localStorage
 
 function createElement(tag, attributes, ...children) {
 	let element = document.createElement(tag)
@@ -50,9 +52,9 @@ window.onload = () => {
 				createElement(
 					'a-obj-model',
 					{
-						id: 'telegrafo',
-						src: '#telegrafo-obj',
-						mtl: '#telegrafo-mtl',
+						id: 'detector',
+						src: '#detector-obj',
+						mtl: '#detector-mtl',
 						position: '0 0 0',
 						scale: '1 1 1',
 					}
