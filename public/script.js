@@ -102,9 +102,13 @@ const generateMarkers = () =>
 							id: name,
 							src: `#${name}-obj`,
 							mtl: `#${name}-mtl`,
-							position: '0 0 0',
-							scale: '1 1 1',
+							position: "0 0 0",
+							scale: "1 1 1",
 						}
+					),
+					createElement(
+						'a-text',
+						{ value: 'G. Marconi (1874-1937)' }
 					)
 				)
 
