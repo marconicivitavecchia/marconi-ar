@@ -54,9 +54,9 @@ window.onload = () => {
 			createElement(
 				'a-obj-model',
 				{
-					id: 'detector',
-					src: '#detector-obj',
-					mtl: '#detector-mtl',
+					id: 'telegrafo',
+					src: '#antenna-obj',
+					mtl: '#antenna-mtl',
 					position: '0 0 0',
 					scale: '1 1 1',
 				}
