@@ -39,3 +39,11 @@ const onMarkerFound = event => {
 		.querySelector('#info')
 		.innerHTML = `Trovati ${markers.size} su 8`
 }
+
+function share() {
+	navigator.share({
+		title: 'Marconi AR',
+		text: 'Trovali tutti!',
+		url: window.location.href
+	})
+}

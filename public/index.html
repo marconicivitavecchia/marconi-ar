@@ -23,9 +23,18 @@
 
 
 <body>
-	<div id="info">Caccia al tesoro!</div>
+	<div id="ui">
+		<div id="info">Caccia al tesoro!</div>
+		<div id="docker">
+			<a href="https://github.com/CuriousCI/marconi-ar" target="_blank">
+				<img src="assets/github-brands.svg" alt="GitHub">
+			</a>
+			<img onclick="share()" src="assets/share_black_24dp.svg" alt="share">
+			<img onclick="restart()" src="assets/arrow-rotate-right-solid.svg" alt="restart">
+		</div>
+	</div>
 	<canvas id="confetti"></canvas>
-	<a-scene vr-module-ui="enabled: false" embedded
+	<a-scene vr-module-ui="enabled: false" vr-mode-ui="enabled: false" embedded
 		arjs="sourceType: webcam; trackingMethod: best; maxDetectionRate: 60; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
 		renderer='antialias: true; alpha: true; precision: high;'>
 		<a-entity camera></a-entity>
