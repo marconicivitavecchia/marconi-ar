@@ -1,14 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100;300;900&family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@200&family=Roboto:wght@100;300;900&family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@200&family=Rampart+One&family=Roboto:wght@100;300;900&family=Ubuntu:wght@500&display=swap');
 
 :root {
-	/* --bg-color: rgba(255, 255, 255, 0.5); */
-	/* --fg-color: black; */
-	/* --bg-color: linear-gradient(90deg, rgba(0,176,255,0.3) 40%, rgba(255,188,0,0.3) 100%); */
-	/* --bg-color: linear-gradient(90deg, rgba(215,215,223,1) 20%, rgba(207,218,220,1) 100%);
-	--fg-color: hsl(212deg 25% 35%);
-	--ac-color: #42c0e0; */
 	--bg-color: rgba(0, 0, 0, 0.3);
 	--fg-color: white;
 	--ac-color: black;
@@ -45,14 +38,29 @@ body {
 	left: 0;
 }
 
-#info {
+#title {
 	padding: 2vh;
-	font-size: 4vh;
+	font-size: 3vh;
 	text-align: center;
 
 	backdrop-filter: blur(20px);
 	background: var(--bg-color);
 	color: var(--fg-color);
+}
+
+#description {
+	margin: 2vh;
+	padding: 2vh;
+	border-radius: 10px;
+
+	font-size: 2.5vh;
+	background: rgba(0, 0, 0, 0.7);
+	/* background: var(--bg-color); */
+	color: var(--fg-color);
+}
+
+#description.invisible {
+	display: none;
 }
 
 #docker {

@@ -18,32 +18,21 @@ function generateConfetti() {
 	)
 
 	animation({
-		particleCount: 100,
-		spread: 160
+		particleCount: 50,
+		spread: 160,
+		scalar: 2.5,
+		ticks: 400
 	})
 
 	animation()
 }
 
-const onMarkerFound = event => {
+function share() {
 	let markers = new Set(JSON.parse(localStorage.getItem('foundMarkers'))) || new Set()
 
-	if (!markers.has(event.target.id))
-		generateConfetti()
-
-	markers.add(event.target.id)
-
-	localStorage.setItem('foundMarkers', JSON.stringify([...markers]))
-
-	document
-		.querySelector('#found')
-		.innerHTML = `${markers.size}/8`
-}
-
-function share() {
 	navigator.share({
 		title: 'Marconi AR',
-		text: 'Trovali tutti!',
+		text: `Trovali tutti! Io ne ho trovati ${markers.size}!`,
 		url: window.location.href
 	})
 }
