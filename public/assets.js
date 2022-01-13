@@ -1,4 +1,4 @@
-const MARKERS = ['logo', 'detector', 'antenna', 'telegrafo']
+const MARKERS = ['logo', 'detector', 'antenna', 'telegrafo', 'sphere']
 
 function loadAssets() {
 	let assets = []
@@ -41,14 +41,14 @@ const generateMarkers = () =>
 							scale: '1 1 1',
 						}
 					),
-					createElement(
-						'a-text',
-						{
-							value: 'G. Marconi (1874-1937)',
-							color: 'white',
-							'look-at': '[camera]',
-						}
-					)
+					// createElement(
+					// 	'a-text',
+					// 	{
+					// 		value: 'G. Marconi (1874-1937)',
+					// 		color: 'white',
+					// 		'look-at': '[camera]',
+					// 	}
+					// )
 				)
 
 				marker.addEventListener('markerFound', onMarkerFound)

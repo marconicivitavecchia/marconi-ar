@@ -36,8 +36,8 @@ const onMarkerFound = event => {
 	localStorage.setItem('foundMarkers', JSON.stringify([...markers]))
 
 	document
-		.querySelector('#info')
-		.innerHTML = `Trovati ${markers.size} su 8`
+		.querySelector('#found')
+		.innerHTML = `${markers.size}/8`
 }
 
 function share() {
@@ -46,4 +46,13 @@ function share() {
 		text: 'Trovali tutti!',
 		url: window.location.href
 	})
+}
+
+function restart() {
+	if (confirm("Ricominciare da capo?")) {
+		localStorage.setItem('foundMarkers', JSON.stringify([]))
+		document
+			.querySelector('#found')
+			.innerHTML = `0/8`
+	}
 }
