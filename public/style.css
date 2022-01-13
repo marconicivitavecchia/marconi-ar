@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@200&family=Roboto:wght@100;300;900&family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@200&family=Rampart+One&family=Roboto:wght@100;300;900&family=Ubuntu:wght@500&display=swap');
 
+:root {
+	/* --bg-color: rgba(255, 255, 255, 0.5); */
+	/* --fg-color: black; */
+	/* --bg-color: linear-gradient(90deg, rgba(0,176,255,0.3) 40%, rgba(255,188,0,0.3) 100%); */
+	/* --bg-color: linear-gradient(90deg, rgba(215,215,223,1) 20%, rgba(207,218,220,1) 100%);
+	--fg-color: hsl(212deg 25% 35%);
+	--ac-color: #42c0e0; */
+	--bg-color: rgba(0, 0, 0, 0.3);
+	--fg-color: white;
+	--ac-color: black;
+}
+
 * {
 	font-family: 'Fredericka the Great';
 }
@@ -35,14 +47,12 @@ body {
 
 #info {
 	padding: 2vh;
-	/* font-family: 'Roboto'; */
 	font-size: 4vh;
 	text-align: center;
 
 	backdrop-filter: blur(20px);
-	background-color: rgba(0, 0, 0, 0.5);
-	/* background-color: rgba(255, 255, 255, 0.5); */
-	color: white;
+	background: var(--bg-color);
+	color: var(--fg-color);
 }
 
 #docker {
@@ -53,14 +63,14 @@ body {
 
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	gap: 2vh;
 
 	padding: 2vh;
 	box-sizing: border-box;
 
 	backdrop-filter: blur(20px);
-	/* background-color: rgba(255, 255, 255, 0.5); */
-	background-color: rgba(0, 0, 0, 0.2);
+	background: var(--bg-color);
 }
 
 #count {
@@ -73,22 +83,24 @@ body {
 	justify-content: center;
 
 	padding: 2vh;
+	border-radius: 10px;
 
-	background-color: rgba(0, 0, 0, 0.2);
-	border-radius: 10%;
-	/* background-color: rgba(255, 255, 255, 0.5); */
-	color: white;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	background: var(--ac-color);
+	color: var(--fg-color);
+}
+
+#found {
+	color: var(--fg-color);
 }
 
 img {
-	/* height: 70%; */
 	height: 4vh;
 
 	padding: 2vh;
-	border-radius: 10%;
+	border-radius: 10px;
 
-	/* backdrop-filter: blur(10px); */
-	background-color: rgba(0, 0, 0, 0.2);
-	/* background-color: rgba(255, 255, 255, 0.5); */
-	color: white;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	background: var(--ac-color);
+	color: var(--fg-color);
 }
