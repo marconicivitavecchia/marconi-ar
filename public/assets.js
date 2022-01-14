@@ -1,13 +1,15 @@
-const MARKERS = ['logo', 'antenna', 'detector', 'telegrafo', 'sphere', 'marconi', '']
+let title = 'Gotta Find ‘Em All!';
+
+const MARKERS = ['logo', 'antenna', 'detector', 'telegrafo', 'sphere', 'marconi', 'question']
 
 const DESCRIPTIONS = [
 	{
 		title: 'Logo festival VR',
-		description: 'Hai partecipato al festival VR? Non sai cosa ti sei perso!'
+		description: 'Hai partecipato al festival VR? Rivedi le registrazioni su studenti.marconicloud.it/vrfestival'
 	},
 	{
 		title: 'Antenna monopolo (1896)',
-		description: 'Riceve ed invia onde radio anche a lunghe distanze. Sono tutt’ora utilizzate dalle stazioni radio.'
+		description: 'Riceve ed invia onde radio anche a lunghe distanze. È tutt’ora utilizzata dalle stazioni radio.'
 	},
 	{
 		title: 'Detector magnetico (1902)',
@@ -15,19 +17,19 @@ const DESCRIPTIONS = [
 	},
 	{
 		title: 'Telegrafo senza fili (1894-1895)',
-		description: 'Trasmettere messaggi tramite onde radio, unico metodo di comunicazione a lunga distanza fino alla Prima guerra mondiale, dove si iniziò ad utilizzare la radio per trasmettere, tramite le frequenze AM la voce.'
+		description: 'Trasmette messaggi tramite onde radio, unico metodo di comunicazione a lunga distanza fino alla Prima guerra mondiale.'
 	},
 	{
 		title: 'Project Fairytale',
-		description: 'Non hai ancora giocato a "Project Fairytale" per Oculus?!? Vallo subito a provare!'
+		description: 'Non sai cos\'è "Project Fairytale"?!? Scoprilo su studenti.marconicloud.it/vrfestival!'
 	},
 	{
 		title: 'G. Marconi Civitavecchia',
-		description: 'Beh... che dire...'
+		description: 'La nostra scuola 😊!'
 	},
 	{
 		title: 'Primo premio',
-		description: 'Questo posto, insieme ai 50€, è riservato al vincitore del contest di modellazione 3D! Hai già inviato i tuoi modelli?'
+		description: 'Questo posto è riservato al vincitore del contest di modellazione 3D! Hai già inviato i tuoi modelli? Vai su studenti.marconicloud.it/vrfestival.'
 	},
 	{
 		title: 'Magnemite',
@@ -45,6 +47,9 @@ const onMarkerFound = event => {
 		markers.add(event.target.id)
 
 		localStorage.setItem('foundMarkers', JSON.stringify([...markers]))
+
+		if (markers.size == 8)
+			title = '👏 Li hai trovati tutti! 🎉'
 
 		document
 			.querySelector('#found')
@@ -65,7 +70,7 @@ const onMarkerFound = event => {
 const onMarkerLost = () => {
 	document
 		.querySelector('#title')
-		.innerHTML = 'Gotta Find ‘Em All!'
+		.innerHTML = title
 
 	let description = document
 		.querySelector('#description')

@@ -32,8 +32,8 @@ function share() {
 
 	navigator.share({
 		title: 'Marconi AR',
-		text: `Trovali tutti! Io ne ho trovati ${markers.size}!`,
-		url: window.location.href
+		text: `Trovali tutti! Io ne ho trovati ${markers.size}! #marconi #trovalitutti`,
+		url: 'marconi-ar.web.app' 
 	})
 }
 
@@ -43,5 +43,7 @@ function restart() {
 		document
 			.querySelector('#found')
 			.innerHTML = `0/8`
+
+		title = 'Gotta Find ‘Em All!'
 	}
 }

@@ -9,7 +9,18 @@ window.onload = () => {
 		document
 			.querySelector('#found')
 			.innerHTML = `${markers.size}/8`
+
+		if (markers.size == 8){
+			title = '👏 Li hai trovati tutti! 🎉'
+
+			document
+				.querySelector('#title')
+				.innerHTML = title
+		}
 	}
+
+	alert('Si consiglia di usare Chrome, Firefox o Safari!')
+	
 
 	let scene = document.querySelector('a-scene')
 
