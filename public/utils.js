@@ -32,7 +32,7 @@ function share() {
 
 	navigator.share({
 		title: 'Marconi AR',
-		text: `Trovali tutti! Io ne ho trovati ${markers.size}! #marconi #trovalitutti`,
+		text: `Trovali tutti! Io ne ho trovati ${markers.size}! #Marconi #MarconiCivitavecchia #trovalitutti`,
 		url: 'marconi-ar.web.app' 
 	})
 }
